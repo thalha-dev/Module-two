@@ -2,7 +2,7 @@ package com.module2.accio.lecture.linkedList;
 
 public class LinkedListSample {
 
-  static Node insert(Node head, int data) {
+  private static Node insert(Node head, int data) {
     Node new_node = new Node(data);
     if (head == null) {
       return new_node;
@@ -15,7 +15,7 @@ public class LinkedListSample {
     return head;
   }
 
-  static void printList(Node head) {
+ private  static void printList(Node head) {
 
     if (head == null) {
       return;
@@ -29,7 +29,7 @@ public class LinkedListSample {
     System.out.println();
   }
 
-  static int size(Node head) {
+  private static int size(Node head) {
     Node temp = head;
     int count = 0;
     while (temp != null) {
@@ -83,7 +83,7 @@ public class LinkedListSample {
   //   return head;
   // }
 
-  public static Node insertAtFront(Node head, int data) {
+  private static Node insertAtFront(Node head, int data) {
     Node new_node = new Node(data);
 
     if (head == null) {
