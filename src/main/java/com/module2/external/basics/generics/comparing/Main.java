@@ -1,7 +1,6 @@
 package com.module2.external.basics.generics.comparing;
 
-
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
@@ -23,14 +22,16 @@ public class Main {
 
     System.out.println(Arrays.toString(list));
     // Arrays.sort(list);
-    // Arrays.sort(
-    //     list,
-    //     new Comparator<Students>() {
-    //       @Override
-    //       public int compare(Students o1, Students o2) {
-    //         return (int) (o1.marks - o2.marks);
-    //       }
-    //     });
+    Arrays.sort(
+        list,
+        new Comparator<Students>() {
+          @Override
+          public int compare(Students o1, Students o2) {
+            return (int) (o1.marks - o2.marks);
+          }
+        });
+    // LAMBDA EXPRESSION
+    // Arrays.sort(list, (o1,o2) -> (int)(o1.marks - o2.marks));
 
     System.out.println(Arrays.toString(list));
   }
