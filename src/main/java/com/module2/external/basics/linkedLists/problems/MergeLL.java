@@ -1,12 +1,12 @@
-package com.module2.external.basics.linkedLists;
+package com.module2.external.basics.linkedLists.problems;
 
-public class LL {
+public class MergeLL {
 
   private Node head;
   private Node tail;
   int size;
 
-  LL() {
+  MergeLL() {
     this.size = 0;
   }
 
@@ -137,6 +137,23 @@ public class LL {
       }
       temp = temp.next;
     }
+    System.out.println();
+  }
+
+  // ---------------- Remove Duplicates
+
+  protected void duplicte() {
+    Node node = head;
+    while (node.next != null) {
+      if (node.value == node.next.value) {
+        node.next = node.next.next;
+        size--;
+      } else {
+        node = node.next;
+      }
+    }
+    tail = node;
+    tail.next = null;
   }
 
   private class Node {
@@ -153,4 +170,19 @@ public class LL {
       this.next = next;
     }
   }
+
+  public static void main(String[] args) {
+    MergeLL one = new MergeLL();
+    one.insertLast(25);
+    one.insertLast(26);
+    one.insertLast(26);
+    one.insertLast(27);
+    one.insertLast(28);
+    one.insertLast(28);
+    one.insertLast(29);
+    one.display();
+    one.duplicte();
+    one.display();
+  }
 }
+
